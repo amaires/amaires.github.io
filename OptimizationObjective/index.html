@@ -1,3 +1,1852 @@
-<a href="OptimizationObjective.pdf">pdf</a><br>
-<div><img src="OptimizationObjective.png-1.png"></div>
-<div><img src="OptimizationObjective.png-2.png"></div>
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>Optimization Objectives</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="OptimizationObjective.css" /> 
+<meta name="src" content="OptimizationObjective.tex" /> 
+</head><body 
+>
+   <div class="maketitle">
+
+
+<h2 class="titleHead">Optimization Objectives</h2>
+<div class="author" ></div><br />
+<div class="date" ><span 
+class="ecrm-1200">Amaires@May 2024</span></div>
+   </div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 17--><p class="noindent" >Given samples <!--l. 17--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></math> from a distribution
+with probability density function <!--l. 18--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></math>,
+the optimization goal of a classiﬁcation problem or a regression problem is to ﬁnd a good
+<!--l. 19--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math> where
+<!--l. 20--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜃</mi></math>
+is the parameter of a chosen family of probability density functions. The objective can be derived in three diﬀerent but related
+ways.
+</p><!--l. 24--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-20001.1"></a>K-L divergence of conditional distribution</h4>
+<!--l. 26--><p class="noindent" >One criterion of a good <!--l. 26--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math> is how close it
+is to <!--l. 26--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math>. One such closeness measure
+is the K-L divergence between <!--l. 27--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math>
+and <!--l. 28--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math> which is
+<!--l. 28--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+class="MathClass-op"> ∫
+ <!--nolimits--></mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <mfrac><mrow 
+><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow> 
+<mrow 
+><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></mfrac><mi 
+>d</mi><mi 
+>y</mi></math> . Of course, this should
+work across all <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>,
+therefore our objective should be
+</p>
+   <table class="equation-star"><tr><td>
+<!--l. 32--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+         <munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo  
+> ∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits-->  <mfrac><mrow 
+><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow> 
+<mrow 
+><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></mfrac><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>x</mi> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫ 
+<!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>x</mi> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>x</mi><mo 
+class="MathClass-close">]</mo>
+</math></td></tr></table>
+<!--l. 35--><p class="indent" >   For our purpose, the ﬁrst term is an unknown consant independent of
+<!--l. 36--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜃</mi></math>. Removing
+this constant, our objective changes to
+</p><!--tex4ht:inline--><!--l. 40--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                          <mtr><mtd 
+columnalign="right" class="align-odd"><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>x</mi></mtd>                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                          <mtd 
+columnalign="right" class="align-label"></mtd>                          <mtd 
+class="align-label">
+                          <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                            <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                               <mtd 
+columnalign="right" class="align-label"></mtd>                          <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 41--><p class="noindent" >The left side of the above equation can also be written as:
+</p><!--tex4ht:inline--><!--l. 48--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                        <mtr><mtd 
+columnalign="right" class="align-odd"><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>x</mi></mtd>                        <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mi 
+>d</mi><mi 
+>x</mi><mspace width="2em"/></mtd>                        <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+                        <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mi 
+>d</mi><mi 
+>x</mi><mspace width="2em"/></mtd>                            <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+                        <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi><mspace width="2em"/></mtd>                        <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+                        <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                           <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+                        <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                                <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 49--><p class="noindent" >So basically, the optimization objective is the following three equivalent functions:
+</p><!--tex4ht:inline--><!--l. 55--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                                           <mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                           <mtd 
+class="align-even"><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                                           <mtd 
+columnalign="right" class="align-label"></mtd>                                           <mtd 
+class="align-label">
+                                           <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                           <mtd 
+class="align-even"><munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                                           <mtd 
+columnalign="right" class="align-label"></mtd>                                           <mtd 
+class="align-label">
+                                           <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                           <mtd 
+class="align-even"><munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                                                <mtd 
+columnalign="right" class="align-label"></mtd>                                           <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 58--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-30001.2"></a>K-L divergence of joint distribution</h4>
+<!--l. 60--><p class="noindent" >Since <!--l. 60--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo> <mo 
+class="MathClass-rel">=</mo> <mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></math>,
+it is easy to arrive at the same conclusions by minimizing the K-L divergence between
+<!--l. 61--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></math> and
+<!--l. 62--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></math>:
+
+</p><!--tex4ht:inline--><!--l. 67--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                 <mtr><mtd 
+columnalign="right" class="align-odd"><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo  
+> ∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits-->  <mfrac><mrow 
+><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow> 
+<mrow 
+><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></mfrac><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi></mtd>                 <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo  
+> ∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits-->  <mfrac><mrow 
+><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow> 
+<mrow 
+><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></mfrac><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi><mspace width="2em"/></mtd>                                      <mtd 
+columnalign="right" class="align-label"></mtd>                 <mtd 
+class="align-label">
+                 <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                             <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo  
+> ∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits-->  <mfrac><mrow 
+><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow> 
+<mrow 
+><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></mfrac><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi><mspace width="2em"/></mtd>                                         <mtd 
+columnalign="right" class="align-label"></mtd>                 <mtd 
+class="align-label">
+                 <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                             <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫ 
+<!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mspace width="2em"/></mtd>                 <mtd 
+columnalign="right" class="align-label"></mtd>                 <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 68--><p class="noindent" >Again, the ﬁrst term is an unknown constant independent of <!--l. 68--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜃</mi></math>
+that can be removed. The objective changes to
+</p><!--tex4ht:inline--><!--l. 74--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+            <mtr><mtd 
+columnalign="right" class="align-odd"><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>x</mi><mi 
+>d</mi><mi 
+>y</mi></mtd>            <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                                                    <mtd 
+columnalign="right" class="align-label"></mtd>            <mtd 
+class="align-label">
+            <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo  
+> ∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>y</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>x</mi> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>            <mtd 
+columnalign="right" class="align-label"></mtd>            <mtd 
+class="align-label">
+            <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                          <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><mo  
+> ∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-open">[</mo><mo  
+>∫
+ <!--nolimits--></mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mi 
+>d</mi><mi 
+>x</mi><mo 
+class="MathClass-close">]</mo><mi 
+>d</mi><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>            <mtd 
+columnalign="right" class="align-label"></mtd>            <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 77--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x1-40001.3"></a>Maximum likelihood</h4>
+<!--l. 79--><p class="noindent" >Given a set of samples <!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo></math>,
+assumed to be i.i.d, one objective could be to maximize the likelihood of observing these samples, which is
+</p>
+   <table class="equation-star"><tr><td>
+<!--l. 83--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                                 <munder class="msub"><mrow 
+><mi class="qopname">max</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><munder class="msub"><mrow 
+><mo  
+> ∏</mo>
+  </mrow><mrow 
+><mi 
+>i</mi></mrow></munder 
+><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo>
+</math></td></tr></table>
+<!--l. 86--><p class="indent" >   This is equivalent to minimizing the negative log likelihood
+
+</p><!--tex4ht:inline--><!--l. 90--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                               <mtr><mtd 
+columnalign="right" class="align-odd"><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><mo 
+class="MathClass-bin">−</mo><munder class="msub"><mrow 
+><mo  
+>∑</mo>
+   </mrow><mrow 
+><mi 
+>i</mi></mrow></munder 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo></mtd>                               <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><munder class="msub"><mrow 
+><mo  
+>∑</mo>
+   </mrow><mrow 
+><mi 
+>i</mi></mrow></munder 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-rel">|</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                                          <mtd 
+columnalign="right" class="align-label"></mtd>                               <mtd 
+class="align-label">
+                               <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                   <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <mo 
+class="MathClass-open">(</mo><munder class="msub"><mrow 
+><mo  
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi></mrow></munder 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo> <mo 
+class="MathClass-bin">+</mo><munder class="msub"><mrow 
+><mo  
+> ∑</mo>
+   </mrow><mrow 
+><mi 
+>i</mi></mrow></munder 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-rel">|</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                               <mtd 
+columnalign="right" class="align-label"></mtd>                               <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 91--><p class="noindent" >As before, the ﬁrst term is an unknown constant independent of <!--l. 91--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜃</mi></math>.
+Once the ﬁrst term is removed, the ojective becomes </p><table class="equation-star"><tr><td>
+<!--l. 93--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                               <munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo><munder class="msub"><mrow 
+><mo  
+>∑</mo>
+   </mrow><mrow 
+><mi 
+>i</mi></mrow></munder 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-rel">|</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close">)</mo>
+</math></td></tr></table>
+<!--l. 96--><p class="indent" >   Divide it by the number of samples, and rewirte it in expectation form, the objective becomes </p><table class="equation-star"><tr><td>
+<!--l. 98--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                             <munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo>
+</math></td></tr></table>
+<!--l. 101--><p class="indent" >   This is the same as what is derived in Section <a 
+href="#x1-20001.1">1.1<!--tex4ht:ref: subsec:K-L-divergence-of --></a> and Section <a 
+href="#x1-30001.2">1.2<!--tex4ht:ref: subsec:K-L-divergence-of-1 --></a>.
+</p><!--l. 104--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-50002"></a>Classiﬁcation</h3>
+<!--l. 106--><p class="noindent" >In a classiﬁcation problem, <!--l. 106--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>y</mi></math>
+takes on a ﬁxed number of possible values usually encoded using numbers from 1 through
+<!--l. 107--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>K</mi></math>. A classiﬁer usually outputs
+the entire probability vector <!--l. 108--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>2</mn><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>3</mn><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-punc">,</mo><mo 
+class="MathClass-rel">⋯</mo><mspace width="0.17em" class="thinspace"/><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>K</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math>.
+In the case of a binary classiﬁcation problem, however, it is more customary to use
+<!--l. 110--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-open">{</mo><mn>0</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn><mo 
+class="MathClass-close">}</mo></math> to encode the two possible
+values that <!--l. 111--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>y</mi></math> can take, and
+the classiﬁer only outputs <!--l. 111--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math>
+with <!--l. 112--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math> implied to
+be <!--l. 112--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>f</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math>. In this
+case, the optimization objective can be rewritten as </p><table class="equation-star"><tr><td>
+
+<!--l. 114--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                    <munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mi 
+>f</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo> <mo 
+class="MathClass-bin">+</mo> <mo 
+class="MathClass-open">(</mo><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>y</mi><mo 
+class="MathClass-close">)</mo><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mo 
+class="MathClass-open">(</mo><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>f</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-close">)</mo>
+</math></td></tr></table>
+<!--l. 117--><p class="indent" >   This is usual called the binary cross entropy objective.
+</p><!--l. 119--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-60003"></a>Regression</h3>
+<!--l. 121--><p class="noindent" >In a regression problem, a neural network’s output can be interpreted as the mean
+<!--l. 122--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></math> of a normal
+distribution <!--l. 122--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>N</mi><mo 
+class="MathClass-open">(</mo><msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo><mo 
+class="MathClass-punc">,</mo><mi 
+>I</mi><mo 
+class="MathClass-close">)</mo></math>.
+With this interpretation, the optimization objective can be rewritten as
+</p><!--tex4ht:inline--><!--l. 128--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                        <mtr><mtd 
+columnalign="right" class="align-odd"><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msub><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">|</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mtd>                        <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mi class="qopname"> min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><msup><mrow 
+><mo 
+class="MathClass-open">(</mo><mn>2</mn><mi 
+>π</mi><mo 
+class="MathClass-close">)</mo></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mfrac><mrow 
+><mi 
+>d</mi></mrow>
+<mrow 
+><mn>2</mn></mrow></mfrac> </mrow></msup 
+><mi class="qopname"> exp</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mo 
+class="MathClass-open">(</mo><mo 
+class="MathClass-bin">−</mo><mfrac><mrow 
+><mn>1</mn></mrow>
+<mrow 
+><mn>2</mn></mrow></mfrac><msup><mrow 
+> <mrow><mo fence="true" form="prefix"> ∥</mo><mrow><mi 
+>y</mi> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow><mo fence="true" form="postfix">∥</mo></mrow></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mo 
+class="MathClass-close">)</mo><mspace width="2em"/></mtd>                        <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+                        <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"></mtd>                                                 <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo> <mo 
+class="MathClass-bin">−</mo><mfrac><mrow 
+><mi 
+>d</mi></mrow>
+<mrow 
+><mn>2</mn></mrow></mfrac><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--><mo 
+class="MathClass-open">(</mo><mn>2</mn><mi 
+>π</mi><mo 
+class="MathClass-close">)</mo> <mo 
+class="MathClass-bin">+</mo> <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><mn>2</mn></mrow></mfrac><munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msup><mrow 
+> <mrow><mo fence="true" form="prefix"> ∥</mo><mrow><mi 
+>y</mi> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow><mo fence="true" form="postfix">∥</mo></mrow></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mspace width="2em"/></mtd>                             <mtd 
+columnalign="right" class="align-label"></mtd>                        <mtd 
+class="align-label">
+   <mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 129--><p class="noindent" >where <!--l. 129--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>d</mi></math> is the
+dimension of <!--l. 129--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>y</mi></math>.
+This objective is equivalent to </p><table class="equation-star"><tr><td>
+<!--l. 131--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                              <munder class="msub"><mrow 
+><mi class="qopname">min</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></munder 
+><msub><mrow 
+><mi 
+>E</mi></mrow><mrow 
+><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-rel">∼</mo><mi 
+>p</mi><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi><mo 
+class="MathClass-close">)</mo></mrow></msub 
+><msup><mrow 
+> <mrow><mo fence="true" form="prefix"> ∥</mo><mrow><mi 
+>y</mi> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mi 
+>𝜃</mi></mrow></msub 
+><mo 
+class="MathClass-open">(</mo><mi 
+>x</mi><mo 
+class="MathClass-close">)</mo></mrow><mo fence="true" form="postfix">∥</mo></mrow></mrow><mrow 
+><mn>2</mn></mrow></msup 
+>
+</math></td></tr></table>
+<!--l. 134--><p class="indent" >   which is the well known mean squared error objective. </p> 
+</body> 
+</html>
+
+
